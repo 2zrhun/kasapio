@@ -1,0 +1,73 @@
+
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if(scrollY > 170){
+        navbar.classList.add('bg');
+    }else{
+        navbar.classList.remove('bg');
+    }
+})
+
+const createNavbar = () => {
+    let navbar = document.querySelector('.navbar');
+
+    navbar.innerHTML += `
+    <ul class="links-container">
+            <li class="link-item">
+                <a href="#" class="link active">home</a>
+            </li>
+            <li class="link-item">
+                <a href="#" class="link">about</a>
+            </li>
+            <li class="link-item">
+                <a href="#" class="link">shop</a>
+            </li>
+            <li class="link-item">
+                <a href="#" class="link">Manifest</a>
+            </li>
+            <li class="link-item">
+                <a href="#" class="link">Contact</a>
+            </li>
+        </ul>
+        <div class="user-cart">
+            <div class="cart">
+                <img src="img/cart.png" alt="" class="cart-icon">
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <img src="img/user.png" alt="" class="user-icon">
+                <div class="user-icon-drop">
+                    <p>your account</p>
+                    <a>login</a>
+                </div>
+            </div>
+        </div>
+    `
+}
+createNavbar ();
+
+//user
+
+let userIcon = document.querySelector('.user-icon');
+let userIcondrop = document.querySelector('.user-icon-drop');
+
+userIcon.addEventListener('click', () => userIcondrop.classList.toggle('active'))
+
+let text = userIcondrop.querySelector('.p');
+let actionBtn = userIcondrop.querySelector('.a');
+let user = JSON.parse(sessionStorage.user || null);
+
+if(user != null){
+    text.innerHTML = `login as,${user.name}`;
+    actionBtn.innerHTML = `logout`;
+    actionBtn.addEventListener('click', () => logout());
+}else{
+    text.innerHTML = `login to your account`;
+    actionBtn.innerHTML = `login`
+}
+
+const logout = () => {
+    sessionStorage.clear()
+    location.reload();
+}

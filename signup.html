@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seriouskasapio-signup page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Work+Sans:wght@100&family=Yantramanav:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <img src="img/loading.gif" alt="" class="loader">
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="form">
+                <h1 class="form-header">sign up here</h1>
+                <input type="text" autocomplete="off" placeholder="full name" id="name">
+                <input type="e-mail" autocomplete="off" placeholder="e-mail" id="e-mail">
+                <input type="password" autocomplete="off" placeholder="password" id="password">
+                <input type="number" autocomplete="off" placeholder="phone number" id="number">
+                <span class="eror">**Tf u doin fam?**</span>
+
+                <div>
+                    <input type="checkbox" id="tc"><label class="tc-txt" for="tc">you aight with <a href="#">mans conditions</a></label>
+                </div>
+                <button id="btn-s" class="submit-btn">sign up</button>
+                <a href="/login" class="other-form-link">already have an account?</a>
+            </div>
+            <img src="img/myimage.png" alt="" class="form-img">
+        </div>
+    </section>
+    <script src="js/signup.js"></script>
+    <script src="js/all.js"></script>
+</body>
+</html>
